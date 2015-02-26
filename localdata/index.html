@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Local Storage - Dave Nielsen</title>
+	<script>
+	function clickCounter1() {
+	    if(typeof(Storage) !== "undefined") {
+	        if (localStorage.clickcount) {
+	            localStorage.clickcount = Number(localStorage.clickcount)+1;
+	        } else {
+	            localStorage.clickcount = 1;
+	        }
+	        document.getElementById("result1").innerHTML = "You have clicked the button " + localStorage.clickcount + " time(s).";
+	    } else {
+	        document.getElementById("result1").innerHTML = "Sorry, your browser does not support web storage. Download a modern browser by visitng google.com/chrome";
+	    }
+	}
+
+	function clickCounter2() {
+	    if(typeof(Storage) !== "undefined") {
+	        if (sessionStorage.clickcount) {
+	            sessionStorage.clickcount = Number(sessionStorage.clickcount)+1;
+	        } else {
+	            sessionStorage.clickcount = 1;
+	        }
+	        document.getElementById("result2").innerHTML = "You have clicked the button " + sessionStorage.clickcount + " time(s) in this session.";
+	    } else {
+	        document.getElementById("result2").innerHTML = "Sorry, your browser does not support web storage. Download a modern browser by visitng google.com/chrome";
+	    }
+	}
+	</script>
+</head>
+
+<body>
+	<h1>localStorage Objects</h1>
+	<p>localStorage objects store data with no expiration date.</p>
+	<p>This click counter is an example of the localStorage object:</p>
+	<p><button onclick="clickCounter1()" type="button">Click me!</button></p>
+	<div id="result1"></div>
+	<p>Click the button to see the counter increase.</p>
+	<p>Close the browser tab (or window), and try again, and the counter will continue to count (is not reset).</p>
+
+	<br><br>
+
+	<h1>sessionStorage Objects</h1>
+	<p>sessionStorage objects only store data for one session.</p>
+	<p>This click counter is an example of the sessionStorage object:</p>
+	<p><button onclick="clickCounter2()" type="button">Click me!</button></p>
+	<div id="result2"></div>
+	<p>Click the button to see the counter increase.</p>
+	<p>Close the browser tab (or window), and try again, and the counter is reset.</p>
+</body>
+</html>
