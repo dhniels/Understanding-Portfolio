@@ -1,6 +1,4 @@
-# Team-2-W15-CIT261
-
-# iConGrabber
+# icongrab.com
 ### retrieves hi-res itunes app icons by itunes URL
 
 ## How it works
